@@ -1,0 +1,33 @@
+group 'money.transfer.test'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'groovy'
+apply plugin: 'application'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.4.10'
+    compile group: 'io.dropwizard', name: 'dropwizard-core', version: '1.1.4'
+    compile group: 'io.dropwizard', name: 'dropwizard-client', version: '1.1.4'
+    compile group: 'io.dropwizard.modules', name: 'dropwizard-java8', version: '0.9.0-1'
+    compile 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
+
+    testCompile "org.spockframework:spock-core:1.1-groovy-2.4"
+    compile group: 'cglib', name: 'cglib-nodep', version: '3.2.4'
+
+}
+
+mainClassName = "MoneyTransferApplication"
+
+run {
+    args 'server','config.yml'
+}
+
+test {
+    exclude 'functional/service/**'
+}

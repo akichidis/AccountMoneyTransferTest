@@ -1,0 +1,145 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Account Money Transfer Calls",
+		"_postman_id": "cf6d17ca-6349-def3-5d37-35c8a55b0f43",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Account",
+			"description": "",
+			"item": [
+				{
+					"name": "Get Account",
+					"request": {
+						"url": "http://localhost:8080/api/account/{account-id}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "Retrieves the account details for the given id"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Account",
+					"request": {
+						"url": "http://localhost:8080/api/account",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"ownerName\": \"John Brown\",\n\t\"currency\": \"EUR\"\n}"
+						},
+						"description": "Creates a new account"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Account Movements",
+					"request": {
+						"url": "http://localhost:8080/api/account/{account-Id}/movements",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "Retrieves the account movements for the specified account id"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transaction",
+			"description": "",
+			"item": [
+				{
+					"name": "Get Transaction",
+					"request": {
+						"url": "http://localhost:8080/api/transaction/{transaction-id}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Deposit Money",
+					"request": {
+						"url": "http://localhost:8080/api/transaction/deposit-money",
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"accountId\": \"account-id\",\n\t\"money\": {\n\t\t\"amount\": \"20\",\n\t\t\"currency\": \"EUR\"\n\t}\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Transfer Money",
+					"request": {
+						"url": "http://localhost:8080/api/transaction/transfer-money",
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"description": "",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"fromAccountId\": \"from-account-id\",\n\t\"toAccountId\": \"from-account-id\",\n\t\"money\": {\n\t\t\"amount\": \"20\",\n\t\t\"currency\": \"EUR\"\n\t},\n\t\"note\": \"transaction note\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
