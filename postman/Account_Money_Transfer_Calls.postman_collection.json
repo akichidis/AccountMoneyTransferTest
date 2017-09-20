@@ -133,7 +133,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"fromAccountId\": \"from-account-id\",\n\t\"toAccountId\": \"from-account-id\",\n\t\"money\": {\n\t\t\"amount\": \"20\",\n\t\t\"currency\": \"EUR\"\n\t},\n\t\"note\": \"transaction note\"\n}"
+							"raw": "{\n\t\"fromAccountId\": \"from-account-id\",\n\t\"toAccountId\": \"to-account-id\",\n\t\"money\": {\n\t\t\"amount\": \"20\",\n\t\t\"currency\": \"EUR\"\n\t},\n\t\"note\": \"transaction note\"\n}"
 						},
 						"description": ""
 					},
