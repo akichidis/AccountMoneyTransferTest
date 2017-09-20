@@ -46,16 +46,16 @@ of conditions on an update operation or a type of versioning in order to ensure 
 During a money transfer from an account to another a conversion on the currency is happen to the destination
 account's currency. In that way somebody can transfer an amount of money from an account of a currency "A" to another
 account of currency "B". The corresponding conversion of the amount is happen. Class *CurrencyConverter* is responsible for the
-conversion. Currently the following currencies are supported: "EUR","USD","GBP"
+conversion. Currently the following currencies are supported: "EUR","USD","GBP".
 
-##API
+## API
 
 The service's API is given bellow. Also, a [Postman](https://www.getpostman.com/) full collection is included under the folder `/postman` with
 all the available calls. The rest implementation is under the package `java/rest`.
 
 #### Account Resource API
 
-#####*- Create a new Account*
+##### *- Create a new Account*
     Creates a new account with zero initial balance. It returns on the header "location" the url
     to retrieve the details of the newly created account
     
@@ -83,7 +83,7 @@ all the available calls. The rest implementation is under the package `java/rest
   * **Code:** 400 <br />
     When the given currency is invalid 400 is returned
     
-#####*- Get Account*
+##### *- Get Account*
     Retrieves the details for the given account id
 * **URL**
 
@@ -116,7 +116,7 @@ all the available calls. The rest implementation is under the package `java/rest
   * **Code:** 409 <br />
     In case where the account is closed
     
-#####*- Get Account Movements*
+##### *- Get Account Movements*
     Retrieves all the movements (deposit, transfer) for the given account id.
 * **URL**
 
@@ -151,7 +151,7 @@ all the available calls. The rest implementation is under the package `java/rest
 
 #### Transaction Resource API
 
-#####*- Create a new deposit transaction*
+##### *- Create a new deposit transaction*
     Creates a new deposit transaction which credits a given amount of money on the selected account. It returns
     on the header "Location" the url to retrieve the newly created url. It also creates a corresponding
     accountMovementRecord
@@ -188,7 +188,7 @@ all the available calls. The rest implementation is under the package `java/rest
   * **Code:** 400 <br />
     In case where the given amount, currency or account id are invalid.
     
-#####*- Create a new transfer transaction*
+##### *- Create a new transfer transaction*
     Creates a new transfer transaction which debits a given amount of money on one account and credits another. It returns
     on the header "Location" the url to retrieve the newly created url. It also creates a corresponding
     accountMovementRecord(s) for both accounts.
@@ -230,7 +230,7 @@ all the available calls. The rest implementation is under the package `java/rest
   * **Code:** 409 <br />
   if the account to debit has not the required amount of money, then this code is returned too.
 
-#####*- Get Transaction*
+##### *- Get Transaction*
     Retrieves a transaction by the given transaction id
 * **URL**
 
